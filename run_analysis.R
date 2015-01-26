@@ -42,6 +42,10 @@ dat <- dat[,c(1, 2, 3:8, 43:48, 83:88, 123:128, 163:168, 203,204, 216,217,
 
 
 # 3. Uses descriptive activity names to name the activities in the data set
+dat[,2] <- factor(dat[,2],
+                  levels=1:6,
+                  labels=c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS",
+                           "SITTING", "STANDING", "LAYING" ))
 
 
 
