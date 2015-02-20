@@ -10,7 +10,7 @@ subjects <- read.table(file="UCI HAR Dataset/train/subject_train.txt")
 activities <- read.table(file="UCI HAR Dataset/train/y_train.txt")
 
 # Combine all the training data
-training.data <- cbind(subjects, activities, training.data)
+training.data <- cbind(training.data, subjects, activities)
 rm(subjects, activities)
 
 
@@ -20,7 +20,7 @@ subjects <- read.table(file="UCI HAR Dataset/test/subject_test.txt")
 activities <- read.table(file="UCI HAR Dataset/test/y_test.txt")
 
 # Combine all the training data
-test.data <- cbind(subjects, activities, test.data)
+test.data <- cbind(test.data, subjects, activities)
 rm(subjects, activities)
 
 
