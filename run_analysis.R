@@ -26,7 +26,7 @@ rm(subjects, activities)
 
 # Merge training and test data
 dat <- rbind(training.data, test.data)
-
+rm(training.data, test.data)
 
 
 
