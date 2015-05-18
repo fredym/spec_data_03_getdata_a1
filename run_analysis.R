@@ -127,13 +127,15 @@ names(dat) <- c(
 
 
 
-# 5. From the data set in step 4, creates a second, independent tidy data set with
-# the average of each variable for each activity and each subject.
+# 5. From the data set in step 4, creates a second, independent tidy data set
+# with the average of each variable for each activity and each subject.
 
-if (!require("plyr")) {install.packages("plyr"); library("plyr")}
+library("plyr")
 
 dat2 <- ddply(dat, c("subject", "activity"), function(x) {
     x$subject <- NULL
     x$activity <- NULL
     apply(x, 2, mean)
     })
+
+write.table(dat2, file="dat2.txt", row.name=FALSE)
